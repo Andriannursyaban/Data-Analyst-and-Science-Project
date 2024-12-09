@@ -1,0 +1,17 @@
+# import library yang dibutuhkan
+import pandas as pd
+
+# membaca data
+dataset = pd.read_excel('Clean.xls')
+dataset.head()
+dataset.info()
+
+# menghitung jumlah data duplikat
+dataset.duplicated().sum()
+
+# menghapus data duplikat
+dataset_no_duplicated = dataset.drop_duplicates()
+
+# Check data setelah operasi
+dataset_no_duplicated.duplicated().sum()
+dataset_no_duplicated.info()
