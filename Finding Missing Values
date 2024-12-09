@@ -1,0 +1,18 @@
+# import library yang dibutuhkan
+import pandas as pd
+import numpy as np
+
+# membaca data
+dataset = pd.read_csv(movie.sqlite.csv)
+dataset.head()
+dataset.info()
+
+# melihat missing values
+dataset.isnull().sum()
+
+# melihat missing values pada kolom tertentu
+null_budget = dataset[dataset['budget'].isnull()]
+null_runtime = dataset[dataset['Runtime'].isnull()]
+
+# mengisi atau mengubah missing values pada kolom tertentu
+dataset['kolom'] = dataset['kolom'].fillna('....')
